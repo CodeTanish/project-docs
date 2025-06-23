@@ -1,0 +1,165 @@
+{
+  "sections": [
+    {
+      "title": "Introduction to Java",
+      "description": "Java is a high-level, object-oriented programming language developed by Sun Microsystems. It follows the Write Once, Run Anywhere (WORA) principle.",
+      "features": [
+        "Object-Oriented",
+        "Platform Independent",
+        "Robust & Secure",
+        "Multithreaded",
+        "Distributed"
+      ],
+      "code": "public class HelloWorld {\n  public static void main(String[] args) {\n    System.out.println(\"Hello, World!\");\n  }\n}"
+    },
+    {
+      "title": "Java Fundamentals",
+      "topics": [
+        {
+          "name": "Data Types",
+          "code": "int age = 25;\ndouble price = 99.99;\nchar grade = 'A';\nboolean isJavaFun = true;\nString name = \"Java\";"
+        },
+        {
+          "name": "If-Else",
+          "code": "if (age > 18) {\n  System.out.println(\"Adult\");\n} else {\n  System.out.println(\"Minor\");\n}"
+        },
+        {
+          "name": "Switch",
+          "code": "switch(day) {\n  case 1: System.out.println(\"Monday\"); break;\n  default: System.out.println(\"Unknown Day\");\n}"
+        },
+        {
+          "name": "Loops",
+          "code": "for (int i = 0; i < 5; i++) {\n  System.out.println(\"Loop \" + i);\n}"
+        }
+      ]
+    },
+    {
+      "title": "Object-Oriented Programming (OOP)",
+      "topics": [
+        {
+          "name": "Class and Object",
+          "code": "class Car {\n  String model;\n  void drive() {\n    System.out.println(\"Driving \" + model);\n  }\n}"
+        },
+        {
+          "name": "Inheritance",
+          "code": "class Animal {\n  void sound() { System.out.println(\"Animal makes a sound\"); }\n}\n\nclass Dog extends Animal {\n  void sound() { System.out.println(\"Dog barks\"); }\n}"
+        },
+        {
+          "name": "Polymorphism",
+          "code": "Animal a = new Dog();\na.sound(); // Output: Dog barks"
+        },
+        {
+          "name": "Encapsulation",
+          "code": "class Account {\n  private double balance;\n\n  public void deposit(double amount) {\n    if (amount > 0) balance += amount;\n  }\n\n  public double getBalance() {\n    return balance;\n  }\n}"
+        },
+        {
+          "name": "Abstraction",
+          "code": "abstract class Shape {\n  abstract void draw();\n}\n\nclass Circle extends Shape {\n  void draw() {\n    System.out.println(\"Drawing Circle\");\n  }\n}"
+        }
+      ]
+    },
+    {
+      "title": "Java Concepts",
+      "topics": [
+        {
+          "name": "Packages",
+          "code": "package mypackage;\npublic class MyClass {\n  public void greet() {\n    System.out.println(\"Hello from package\");\n  }\n}"
+        },
+        {
+          "name": "Exception Handling",
+          "code": "try {\n  int result = 10 / 0;\n} catch (ArithmeticException e) {\n  System.out.println(\"Cannot divide by zero\");\n} finally {\n  System.out.println(\"Always executed\");\n}"
+        }
+      ]
+    },
+    {
+      "title": "Collections Framework",
+      "topics": [
+        {
+          "name": "List",
+          "code": "List<String> list = new ArrayList<>();\nlist.add(\"Java\");\nlist.add(\"Python\");"
+        },
+        {
+          "name": "Set",
+          "code": "Set<String> set = new HashSet<>();\nset.add(\"Java\");\nset.add(\"Java\"); // Duplicates not allowed"
+        },
+        {
+          "name": "Map",
+          "code": "Map<Integer, String> map = new HashMap<>();\nmap.put(1, \"One\");\nSystem.out.println(map.get(1));"
+        }
+      ]
+    },
+    {
+      "title": "Multithreading",
+      "description": "Java allows running multiple threads simultaneously using the Thread class or Runnable interface.",
+      "code": "class MyThread extends Thread {\n  public void run() {\n    System.out.println(\"Thread running\");\n  }\n}\nMyThread t1 = new MyThread();\nt1.start();"
+    },
+    {
+      "title": "JDBC (Java Database Connectivity)",
+      "code": "Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/db\", \"user\", \"pass\");\nStatement stmt = con.createStatement();\nResultSet rs = stmt.executeQuery(\"SELECT * FROM students\");"
+    },
+    {
+      "title": "Java Servlets (Web)",
+      "code": "@WebServlet(\"/hello\")\npublic class HelloServlet extends HttpServlet {\n  protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {\n    res.getWriter().println(\"Hello from Servlet\");\n  }\n}"
+    },
+    {
+      "title": "Advanced Java Concepts",
+      "topics": [
+        {
+          "name": "Generics",
+          "code": "class Box<T> {\n  T value;\n  void set(T val) { value = val; }\n  T get() { return value; }\n}"
+        },
+        {
+          "name": "Synchronization",
+          "code": "synchronized void printTable(int n) {\n  for (int i = 1; i <= 5; i++) {\n    System.out.println(n * i);\n  }\n}"
+        },
+        {
+          "name": "Lambda Expressions",
+          "code": "interface Greeting {\n  void sayHello();\n}\n\nGreeting g = () -> System.out.println(\"Hello from Lambda\");\ng.sayHello();"
+        }
+      ]
+    },
+    {
+      "title": "Build Tools",
+      "topics": [
+        {
+          "name": "Maven",
+          "code": "<dependencies>\n  <dependency>\n    <groupId>org.springframework</groupId>\n    <artifactId>spring-core</artifactId>\n    <version>5.3.9</version>\n  </dependency>\n</dependencies>"
+        },
+        {
+          "name": "Gradle",
+          "code": "plugins {\n  id 'java'\n}\ndependencies {\n  implementation 'org.springframework.boot:spring-boot-starter'\n}"
+        }
+      ]
+    },
+    {
+      "title": "Java Frameworks (Overview)",
+      "frameworks": [
+        "Spring Boot - Rapid backend development",
+        "Hibernate - ORM for database",
+        "JavaFX - Desktop GUI apps",
+        "JUnit - Unit testing framework"
+      ]
+    },
+    {
+      "title": "Practice Projects",
+      "projects": [
+        {
+          "name": "Student Management System",
+          "description": "Manage students' add/update/delete/view."
+        },
+        {
+          "name": "Library Management System",
+          "description": "Manage book records, issue/return books, and user roles."
+        },
+        {
+          "name": "E-Commerce Backend",
+          "description": "Product listing, cart, and orders using REST API."
+        },
+        {
+          "name": "Chat Application (Sockets)",
+          "description": "Multi-client server using Java sockets and threading."
+        }
+      ]
+    }
+  ]
+}

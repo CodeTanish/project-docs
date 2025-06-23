@@ -1,7 +1,7 @@
 export const Header = {
   ground:
     'fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 sm:px-6 md:px-10 py-3 backdrop-blur-xs',
-  logo: 'text-xl sm:text-2xl font-semibold tracking-wide ml-2 sm:ml-6 md:ml-12',
+  logo: 'text-xl sm:text-2xl font-semibold tracking-wide ml-2 sm:ml-6 md:ml-12 cursor-pointer',
   right: 'flex gap-3 sm:gap-4 text-lg sm:text-xl mr-2 sm:mr-6 md:mr-12',
   ul: 'flex flex-row gap-3 sm:gap-4',
   li: 'hover:text-gray-300 transition duration-200 cursor-pointer text-xl sm:text-2xl',
