@@ -17,6 +17,7 @@
       "topics": [
         {
           "name": "Data Types",
+          "description": "their are many type of data type available in the java.",
           "code": "int age = 25;\ndouble price = 99.99;\nchar grade = 'A';\nboolean isJavaFun = true;\nString name = \"Java\";"
         },
         {
