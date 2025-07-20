@@ -1,3 +1,4 @@
+// TopicPage.jsx
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Sidebar from '../components/SideBar';
@@ -15,33 +16,28 @@ export default function TopicPage() {
       try {
         const data = await import(`../data/topic/${topic}.json`);
         setContent(data.default);
-        setActiveIndex(0); // Reset when topic changes
+        setActiveIndex(0); // Reset to first section
       } catch (err) {
         setError('Topic not found or failed to load.');
       } finally {
         setLoading(false);
       }
     };
-
     fetchTopicData();
   }, [topic]);
 
-  if (loading) return <div className="p-6 text-center text-lg mt-[2%]">Loading {topic}...</div>;
-  if (error) return <div className="p-6 text-center text-red-500 mt-[2%]">{error}</div>;
+  if (loading) return <div className="p-6 text-center text-lg">Loading {topic}...</div>;
+  if (error) return <div className="p-6 text-center text-red-500">{error}</div>;
 
   return (
     <div className="flex">
       <Sidebar
-        sections={content.sections}
+        sections={content?.sections}
         currentTopic={topic}
+        activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
-        activeIndex={activeIndex}
       />
-      <TopicContent
-        topic={topic}
-        content={content}
-        activeIndex={activeIndex}
-      />
+      <TopicContent topic={topic} content={content} activeIndex={activeIndex} />
     </div>
   );
 }
